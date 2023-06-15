@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def loginpage():
-      return  render_template("loginpage.html")
+      return  render_template("index.html")
 
 @app.route("/mainpage")
 def mainpage():
