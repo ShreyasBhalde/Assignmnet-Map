@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Document</title>
+<style>
+
+.btn{
+    border: 2px solid rgb(184, 80, 156);
+    background-color: white;
+    font-size: 12px;
+    
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: rgb(41, 96, 118);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: rgb(100, 185, 200);
+}
+
+.log {
+    float: right;
+    padding: 12px 30px;
+    color: red;
+    border-radius: 50px;
+    text-align: center;
+    margin-right: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+a:link{
+    color: rgb(184, 80, 156);
+}
+
+
+#login-form{
+
+    color: black;
+    border: 0px solid #afafaf;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 22%;
+    margin-left: 35%;
+    margin-top: 120px;
+    padding: 40px;
+    padding-top: 20px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 8px #777;
+    background: rgba(255, 255, 255, 0.6)
+    
+    }
+
+    input[type=submit] {
+      background-color: #1a73e8 ;
+      border-radius: 3px;
+      border-color: #1a73e8;
+      color: white;
+    }
+
+    .button1{
+      background-color: #f35921;
+      border-radius: 3px;
+      border-color: #f35921;
+      color: white;
+    }
+    .button2{
+      background-color: #186aad;
+      border-radius: 3px;
+      border-color: #186aad;
+      color: white;
+    }
+    .note{
+      font-size: 10px;
+      color: gray;
+      text-align: left;
+    }
+
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a class="active" >Home</a></li>
+  <li><a >Our Products</a></li>
+  <li><a >About Us</a></li>
+  <li><a >Contact Us</a></li>
+   <div class="btn log">
+    <a href="http://127.0.0.1:5000/mainpage" color="red">Log in</a>
+   </div>
+</ul>
+
+<div id="login-form">
+    <form method="post">
+            <h4>Welcome to Login/Signup</h4>
+            <h6>Please enter details</h6>
+            <table>
+            <td><input type="text" name="number" placeholder="10 digit phone number" size="35"></td></tr>
+            <tr><td></td></tr>
+            <tr><td><input type="submit" value="Continue" style="width:100% ;"  ></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td><button class="button1" style="width: 50%;">Google</button>
+            <button class="button2" style="width :48%">Facebook</button></td></tr>
+            <tr><td class="note">If you have entered an Email id/Phone No. which is not registered
+              on Sigma Value,the app will automatically go for signup</td></tr>
+
+            
+            
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+
+.btn{
+    border: 2px solid rgb(184, 80, 156);
+    background-color: white;
+    font-size: 12px;
+    text-align:right;
+    
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: rgb(41, 96, 118);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: rgb(100, 185, 200);
+}
+
+.log {
+    float: right;
+    padding: 12px 30px;
+    color: red;
+    border-radius: 50px;
+    text-align: center;
+    margin-right: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+a:link{
+    color: rgb(184, 80, 156);
+}
+      
+      html{
+        height: 50%;
+        
+      }
+      .drop1{
+        width: 800px;
+     }
+
+     .drop2{
+        width: 800px;
+     }
+      body {
+        height: 500px;
+        width: 500px;
+      }
+
+    .list{
+        font-size: 10px;
+    }
+    .note{
+      font-size: smaller;
+    }
+    .full{
+      height: 70%;
+      width: 70%;
+    }
+    </style>
+    <script>
+      var map;
+      var markers = {};
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map-container"), {
+          center: { lat: 0, lng: 0 },
+          zoom: 2,
+        });
+      }
+
+      function displaySelectedMap() {
+        var mapSelect = document.getElementById("map-select");
+        var selectedLocation = mapSelect.value;
+
+        if (selectedLocation === "Khadki-Sun Shine Project") {
+          displayMap({ lat:18.56639775919182, lng:73.83851296931093 }, "Khadki-Sun Shine Project");
+        } else if (selectedLocation === "Khadki-Mont Vert") {
+          displayMap({ lat:18.56448825647721, lng:73.83767986997688 }, "Khadki-Mont Vert");
+        } else if (selectedLocation === "Pimple Saudagar-Bhoomi Allium") {
+          displayMap({ lat:18.59941482022125, lng:73.79228913953241}, "Pimple Saudagar-Bhoomi Allium");
+        }else if (selectedLocation === "Khadadi-Satin Brick") {
+          displayMap({ lat:18.564528299860857, lng:73.95034719553216 }, "Khadadi-Satin Brick");
+        }else if (selectedLocation === "Hinjewadi-Eon Homes") {
+          displayMap({ lat:18.579354440961446, lng:73.68963942242554 }, "Hinjewadi-Eon Homes");
+        }
+      }
+
+      function displayMap(location, locationName) {
+        initMap();
+        map.setCenter(location);
+        if (markers[locationName]) {
+          markers[locationName].setMap(map);
+        } else {
+          markers[locationName] = new google.maps.Marker({
+            position: location,
+            map: map,
+            title: locationName,
+          });
+        }
+        document.getElementById("map-container").style.width = "100%";
+        document.getElementById("map-container").style.height = "100%";
+      }
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDT8Nh7NOTh6lKggghQVG71QcoQsUwQ9go&callback=initMap"
+      async
+      defer
+    ></script>
+  </head>
+  <body>
+    <ul>
+      <li><a class="active" >Home</a></li>
+      <li><a >Our Products</a></li>
+      <li><a >About Us</a></li>
+      <li><a >Contact Us</a></li>
+       
+    </ul>
+    <table class="full">
+        <tr><td><label for="city" >City</label>
+        <select name="city" id="city" class="drop1">
+        <option value="Select city">Select City</option>
+        <option  value="Pune">Pune</option></td></tr>
+        <tr><td></td></tr>
+     <tr><td><label for="map-select">Select a location:</label>
+      <select id="map-select" class="drop2">
+      <option value="Khadki-Sun Shine Project">Khadki-Sun Shine Project</option>
+      <option value="Khadki-Mont Vert">Khadki-Mont Vert</option>
+      <option value="Pimple Saudagar-Bhoomi Allium">Pimple Saudagar-Bhoomi Allium</option>
+      <option value="Khadadi-Satin Brick">Khadadi-Satin Brick</option>
+      <option value="Hinjewadi-Eon Homes">Hinjewadi-Eon Homes</option></select></td></tr>
+    <tr><td><h4>OR</h4></td></tr>
+    <tr><td >Latitude <input type="text" name="latitude" placeholder="Project Latitude"> Longitude <input type="text" name="longitude" placeholder="Project Longitude"></td></tr>
+  </table>
+  <button onclick="displaySelectedMap()">Display map</button>
+  <div id="map-container"></div>
+  <tr><td class="note">For list view click here:<a href="http://127.0.0.1:5000/Showrecords">Display List</a></td></tr>
+  
+  </body>
+</html>

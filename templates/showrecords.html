@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <centre>
+        <h1>Show all records</h1>
+        <hr/>
+        <a href="http://127.0.0.1:5000/mainpage">Back</a>
+        <p></p>
+        <table border="1">
+            <tr><th>city</th><th>location</th>
+            <th>Project_name</th><th>latitude</th><th>longitude</th></tr>
+            {%for d in dept%}
+            <tr><td>{{d[0]}}</td>
+                <td>{{d[1]}}</td>
+                <td>{{d[2]}}</td>
+                <td>{{d[3]}}</td>
+                <td>{{d[4]}}</td>
+            {%endfor%}
+        </table>
+    </centre>
+</body>
+</html>
